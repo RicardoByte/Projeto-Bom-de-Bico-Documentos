@@ -17,7 +17,7 @@ Requisitos funcionais descrevem **o que o sistema deve fazer**. São as funciona
     
 - O sistema deve permitir ao comprador selecionar um endereço de entrega.
     
-- O sistema deve permitir que o comprador realize o pagamento via Cartão de Crédito e PIX.
+- O sistema deve permitir que o comprador realize o pagamento via Cartão de Crédito, Debito, PIX e Boleto.
     
 - O sistema deve permitir ao comprador visualizar seu histórico de pedidos.
     
