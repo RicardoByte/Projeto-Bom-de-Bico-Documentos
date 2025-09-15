@@ -25,3 +25,15 @@ Regras de negócio são as políticas e restrições específicas que governam c
 - O pagamento só será liberado ao vendedor 7 dias após a confirmação de entrega pelo comprador.
 - Comentários ou perguntas com linguagem de cunho ofensivo serão removidos pela moderação.
 - É proibido anunciar produtos de categorias restritas (ex: produtos não relacionados aos serviços do marketplace, produtos ilegais).
+
+## ## Logística e Entrega
+
+- O valor do frete será calculado dinamicamente no momento da compra, com base nas tabelas de preços fornecidas pelas transportadoras parceiras, considerando o CEP de origem (vendedor), CEP de destino (comprador), dimensões e peso do produto.
+- O vendedor deve utilizar exclusivamente a etiqueta de envio gerada e pré-paga pela plataforma para garantir o rastreamento e a segurança da transação.
+- O repasse dos valores de frete para as transportadoras parceiras será realizado em ciclos de faturamento mensais, após a conciliação das entregas efetivamente postadas.
+- Quando um cupom de frete grátis for oferecido pela **plataforma** (como ação de marketing), o custo do envio será integralmente subsidiado pela plataforma, não sendo descontado do repasse do vendedor.
+- Vendedores que possuem uma estrutura de logística própria podem solicitar o uso deste modelo (etiqueta pré-paga). A aprovação dependerá de uma análise da capacidade operacional do vendedor.
+- O vendedor é responsável por cadastrar e manter atualizada sua própria tabela de fretes na plataforma, definindo os custos, prazos e áreas de cobertura (por exemplo, por faixa de CEP, bairro ou cidade). O valor do frete calculado por esta tabela será o cobrado do comprador.
+- Uma vez que a plataforma não tem rastreamento automático, o vendedor é obrigado a atualizar manualmente (ou via integração) o status do pedido na plataforma em cada etapa chave, no mínimo: `Em preparação`, `Saiu para entrega` e `Entregue`.
+- A entrega será considerada oficialmente concluída somente após a **confirmação de recebimento pelo comprador** dentro da plataforma. O prazo de liberação do pagamento ao vendedor (definido nas regras da Plataforma) começará a contar a partir desta confirmação.
+- Toda a responsabilidade pela operação de entrega — incluindo o cumprimento de prazos, a integridade do produto durante o transporte, a comunicação com o cliente e eventuais extravios — é **exclusivamente do vendedor**. Falhas nesta operação impactarão diretamente a reputação do vendedor e estarão sujeitas à mediação de disputas pela plataforma.
