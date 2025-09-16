@@ -26,7 +26,7 @@ Regras de negócio são as políticas e restrições específicas que governam c
 - Comentários ou perguntas com linguagem de cunho ofensivo serão removidos pela moderação.
 - É proibido anunciar produtos de categorias restritas (ex: produtos não relacionados aos serviços do marketplace, produtos ilegais).
 
-## ## Logística e Entrega
+## Logística e Entrega
 
 - O valor do frete será calculado dinamicamente no momento da compra, com base nas tabelas de preços fornecidas pelas transportadoras parceiras, considerando o CEP de origem (vendedor), CEP de destino (comprador), dimensões e peso do produto.
 - O vendedor deve utilizar exclusivamente a etiqueta de envio gerada e pré-paga pela plataforma para garantir o rastreamento e a segurança da transação.

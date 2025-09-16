@@ -1,8 +1,6 @@
 ___
 ### **Requisitos Funcionais (Functional Requirements)**
 
-Requisitos funcionais descrevem **o que o sistema deve fazer**. São as funcionalidades e ações que os usuários podem executar. É melhor organizá-los por tipo de usuário.
-
 - O sistema deve permitir que usuários se cadastrem usando e-mail e senha.
     
 - O sistema deve permitir o login com e-mail e senha.
@@ -52,9 +50,6 @@ Requisitos funcionais descrevem **o que o sistema deve fazer**. São as funciona
 ---
 ### **Requisitos Não Funcionais (Non-Functional Requirements)**
 
-Requisitos não funcionais descrevem **como o sistema deve ser**. Eles definem a qualidade, o desempenho e as restrições da plataforma, e são tão importantes quanto os funcionais.
-
-
 - As páginas do site devem carregar em menos de 3 segundos.
     
 - O resultado de uma busca deve ser retornado em menos de 1 segundo.
@@ -65,7 +60,7 @@ Requisitos não funcionais descrevem **como o sistema deve ser**. Eles definem a
     
 - As senhas dos usuários devem ser armazenadas utilizando um algoritmo de hash seguro (ex: Argon2, bcrypt).
     
-- O sistema deve ser protegido contra ataques comuns (SQL Injection, Cross-Site Scripting - XSS).
+- O sistema deve ser protegido contra ataques comuns (SQL Injection, Cross-Site Scripting - XSS, Ataques DDos).
     
 - O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados (LGPD).
     
