@@ -1,3 +1,17 @@
+<div align="center">
+  <img src="imgs/Esboço Logo marca.jpg" height="200px"/>
+  <h1><b>🦆 Bom de Bico</b></h1>
+</div>
+
+---
+
+<div align="center">
+  <img alt="Obsidian" src="https://img.shields.io/badge/Obsidian-%23483699.svg?style=for-the-badge&logo=obsidian&logoColor=white" />
+</div>
+
+> Este repositório foi criado utilizando o Obsidian com plugins específicos. Para uma melhor experiência de visualização, consulte a [lista de plugins recomendados](./Plugins.md).
+---
+
 ## 🌟 Sobre o Projeto
 Bom de Bico é um marketplace especializado em produtos para aves domésticas, oferecendo tudo que você precisa para cuidar e mimar seus amigos de penas! Nossa plataforma conecta amantes de aves com os melhores produtos do mercado.
 
