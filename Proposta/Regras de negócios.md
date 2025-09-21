@@ -1,39 +1,43 @@
 # **Regras de Negócio (Business Rules)**
 
-Regras de negócio são as políticas e restrições específicas que governam como sua plataforma irá operar. Elas ditam o que pode ou não ser feito. 
-
 ## Usuário
-- Um usuário deve ter no mínimo 18 anos para se cadastrar.
-- Usuários menores de idade devem ter vinculado ao menos o CPF de um responsável legal para realizar compras.
-- O e-mail de um usuário deve ser único na plataforma.
+- **RN-USR-01:** O e-mail de um usuário deve ser único e sua posse deve ser verificada através de um link de confirmação enviado após o cadastro.
+- **RN-USR-02:** O usuário deve declarar ter no mínimo 18 anos no momento do cadastro para utilizar a plataforma.
 
 ## Comprador
-- Um comprador tem até 7 dias corridos após o recebimento para abrir uma disputa ou solicitar uma devolução. 
+- **RN-CPR-01:** Um comprador tem até 7 dias corridos após o recebimento para abrir uma disputa ou solicitar uma devolução.
 
 ## Vendedor
-- Para se tornar um vendedor, o usuário deve fornecer um comprovante CPF ou CNPJ e endereço.
-- Um vendedor só pode ter um anúncio ativo por produto idêntico (evitar spam).
-- A reputação de um vendedor será calculada com base na média das notas dos últimos 100 pedidos.
+- **RN-VND-01:** Para se tornar um vendedor, o usuário deve fornecer documentos válidos, como Cartão CNPJ e um comprovante de endereço recente (ex: conta de consumo dos últimos 3 meses).
+- **RN-VND-02:** Um vendedor só pode ter um anúncio ativo por produto (evitar spam).
+- **RN-VND-03:** A reputação de um vendedor será calculada com base na média das avaliações recebidas. Para vendedores novos, a reputação será exibida como "Vendedor Novo".
 
 ## Produtos
-- Um produto não pode ser anunciado sem pelo menos uma foto de boa qualidade.
-- O preço de um produto deve ser sempre maior que R$ 0,00. 
-- Apenas usuários que concluíram a compra de um produto podem deixar uma avaliação sobre ele.
+- **RN-PRD-01:** Um produto não pode ser anunciado sem pelo menos uma foto com resolução mínima (ex: 800x800 pixels), nítida e que represente fielmente o item.
+- **RN-PRD-02:** O preço de um produto deve ser sempre maior que R$ 0,00.
+- **RN-PRD-03:** Apenas usuários que concluíram a compra de um produto podem deixar uma avaliação sobre ele.
+
+## Pedidos
+- **RN-PED-01:** Um pedido só é considerado "confirmado" e notificado ao vendedor após a aprovação do pagamento.
+- **RN-PED-02:** O vendedor tem um prazo de 3 dias úteis para postar o produto após a confirmação do pedido.
+- **RN-PED-03:** Caso o vendedor não cumpra o prazo de postagem, o pedido será automaticamente cancelado e o comprador, integralmente reembolsado.
 
 ## Plataforma
-- A plataforma reterá uma comissão de 10% sobre o valor de cada produto vendido.
-- O pagamento só será liberado ao vendedor 7 dias após a confirmação de entrega pelo comprador.
-- Comentários ou perguntas com linguagem de cunho ofensivo serão removidos pela moderação.
-- É proibido anunciar produtos de categorias restritas (ex: produtos não relacionados aos serviços do marketplace, produtos ilegais).
+- **RN-PLT-01:** A plataforma reterá uma comissão de 10% sobre o valor de cada produto vendido.
+- **RN-PLT-02:** O pagamento só será liberado ao vendedor 7 dias após a confirmação de entrega pelo comprador.
+- **RN-PLT-03:** Comentários ou perguntas com linguagem de cunho ofensivo serão removidos pela moderação.
+- **RN-PLT-04:** A plataforma manterá uma lista explícita e pública de categorias e produtos proibidos em seus "Termos de Uso".
 
 ## Logística e Entrega
 
-- O valor do frete será calculado dinamicamente no momento da compra, com base nas tabelas de preços fornecidas pelas transportadoras parceiras, considerando o CEP de origem (vendedor), CEP de destino (comprador), dimensões e peso do produto.
-- O vendedor deve utilizar exclusivamente a etiqueta de envio gerada e pré-paga pela plataforma para garantir o rastreamento e a segurança da transação.
-- O repasse dos valores de frete para as transportadoras parceiras será realizado em ciclos de faturamento mensais, após a conciliação das entregas efetivamente postadas.
-- Quando um cupom de frete grátis for oferecido pela **plataforma** (como ação de marketing), o custo do envio será integralmente subsidiado pela plataforma, não sendo descontado do repasse do vendedor.
-- Vendedores que possuem uma estrutura de logística própria podem solicitar o uso deste modelo (etiqueta pré-paga). A aprovação dependerá de uma análise da capacidade operacional do vendedor.
-- O vendedor é responsável por cadastrar e manter atualizada sua própria tabela de fretes na plataforma, definindo os custos, prazos e áreas de cobertura (por exemplo, por faixa de CEP, bairro ou cidade). O valor do frete calculado por esta tabela será o cobrado do comprador.
-- Uma vez que a plataforma não tem rastreamento automático, o vendedor é obrigado a atualizar manualmente (ou via integração) o status do pedido na plataforma em cada etapa chave, no mínimo: `Em preparação`, `Saiu para entrega` e `Entregue`.
-- A entrega será considerada oficialmente concluída somente após a **confirmação de recebimento pelo comprador** dentro da plataforma. O prazo de liberação do pagamento ao vendedor (definido nas regras da Plataforma) começará a contar a partir desta confirmação.
-- Toda a responsabilidade pela operação de entrega — incluindo o cumprimento de prazos, a integridade do produto durante o transporte, a comunicação com o cliente e eventuais extravios — é **exclusivamente do vendedor**. Falhas nesta operação impactarão diretamente a reputação do vendedor e estarão sujeitas à mediação de disputas pela plataforma.
+#### Modelo 1: Logística Integrada (Etiqueta gerada pela Plataforma)
+- **RN-LOG-01A:** O valor do frete será calculado dinamicamente com base nas tabelas das transportadoras parceiras, considerando CEP de origem, destino, dimensões e peso do produto.
+- **RN-LOG-02A:** O vendedor deve utilizar exclusivamente a etiqueta de envio gerada e pré-paga pela plataforma para garantir o rastreamento automático e a segurança da transação.
+- **RN-LOG-03A:** Quando um cupom de frete grátis for oferecido pela plataforma, o custo do envio será integralmente subsidiado por ela.
+
+#### Modelo 2: Logística Própria (Gerenciada pelo Vendedor)
+- **RN-LOG-01B:** Vendedores com estrutura própria podem solicitar o uso deste modelo, sujeito à aprovação pela plataforma.
+- **RN-LOG-02B:** O vendedor é responsável por cadastrar e manter sua própria tabela de fretes na plataforma, definindo custos, prazos e áreas de cobertura.
+- **RN-LOG-03B:** O vendedor é obrigado a atualizar manualmente o status do pedido em cada etapa chave (`Em preparação`, `Saiu para entrega`, `Entregue`).
+- **RN-LOG-04B:** A entrega será considerada concluída somente após a confirmação de recebimento pelo comprador na plataforma, para fins de liberação de pagamento.
+- **RN-LOG-05B:** A responsabilidade pela operação de entrega é exclusivamente do vendedor, e falhas impactarão sua reputação.
